@@ -22,7 +22,7 @@ export const ContactSection = () => {
     name: '',
     email: '',
     projectType: 'Business Website',
-    budgetRange: '₹15,000 - ₹30,000 ($200 - $400)',
+    budgetRange: '₹2000 - ₹4000',
     message: ''
   });
 
@@ -95,7 +95,7 @@ export const ContactSection = () => {
         name: '',
         email: '',
         projectType: 'Business Website',
-        budgetRange: '₹15,000 - ₹30,000 ($200 - $400)',
+        budgetRange: '₹2000 - ₹4000',
         message: ''
       });
     } catch (err) {
