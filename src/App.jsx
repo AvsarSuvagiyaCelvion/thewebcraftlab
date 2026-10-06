@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
@@ -40,6 +41,9 @@ function App() {
         {/* Floating Utilities */}
         <FloatingInstagram />
         <ScrollToTop />
+
+        {/* Real-time Website Traffic & Analytics */}
+        <Analytics />
       </div>
     </ThemeProvider>
   );
