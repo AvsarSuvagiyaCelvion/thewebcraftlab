@@ -1,19 +1,19 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const ThemeContext = createContext({
-  theme: 'dark',
+  theme: 'light',
   toggleTheme: () => {},
-  isDark: true,
+  isDark: false,
 });
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    // Default to dark theme as required, but check localStorage if user previously switched
+    // Default to light theme as requested, or load user's previous preference
     const savedTheme = localStorage.getItem('thewebcraftlab_theme');
     if (savedTheme) {
       return savedTheme;
     }
-    return 'dark';
+    return 'light';
   });
 
   useEffect(() => {

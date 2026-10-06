@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { 
   User, 
   MapPin, 
@@ -39,33 +40,48 @@ const skillIcons = {
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-20 sm:py-28 relative overflow-hidden bg-slate-50/50 dark:bg-dark-bg/50">
+    <section id="about" className="py-20 sm:py-28 relative overflow-hidden bg-slate-50/70 dark:bg-dark-bg/50">
       {/* Glow behind section */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-accent/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <SectionHeading
-          badge="About The Craft"
-          badgeIcon={User}
-          title="The Developer Behind"
-          highlight="The WebCraft Lab"
-          subtitle="A dedicated freelance developer in Surat, Gujarat helping businesses modernise their web presence."
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <SectionHeading
+            badge="About The Craft"
+            badgeIcon={User}
+            title="The Developer Behind"
+            highlight="The WebCraft Lab"
+            subtitle="A dedicated freelance developer in Surat, Gujarat helping businesses modernise their web presence."
+          />
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Column: Bio & Core Values */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-dark-card/90 border border-slate-200/90 dark:border-slate-800/80 shadow-sm space-y-5">
+          <motion.div 
+            initial={{ opacity: 0, x: -25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.55 }}
+            className="lg:col-span-6 space-y-6"
+          >
+            <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-slate-800/80 shadow-sm space-y-5">
               
               {/* Profile Header */}
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-brand-accent via-purple-600 to-brand-cyan p-0.5 shadow-lg">
-                  <div className="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center text-brand-cyan">
-                    <Code2 className="w-8 h-8" />
-                  </div>
+                <div className="w-16 h-16 rounded-2xl overflow-hidden bg-slate-950 p-0.5 border border-brand-accent/40 shadow-lg flex items-center justify-center">
+                  <img
+                    src="/brand/logo.jpg"
+                    alt="The WebCraft Lab Logo"
+                    className="w-full h-full object-cover rounded-[14px]"
+                  />
                 </div>
                 <div>
                   <h3 className="text-xl font-heading font-bold text-slate-900 dark:text-white">
@@ -114,9 +130,10 @@ export const AboutSection = () => {
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {developerBio.coreValues.map((val, idx) => (
-                  <div
+                  <motion.div
                     key={idx}
-                    className="p-4 rounded-xl bg-white dark:bg-dark-card/60 border border-slate-200/70 dark:border-slate-800/60"
+                    whileHover={{ y: -3 }}
+                    className="p-4 rounded-xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-slate-800/80 shadow-xs"
                   >
                     <div className="text-xs font-bold text-slate-900 dark:text-white mb-1">
                       {val.title}
@@ -124,16 +141,22 @@ export const AboutSection = () => {
                     <div className="text-[11px] text-slate-500 dark:text-slate-400 leading-normal">
                       {val.desc}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Right Column: Skills & Tech Stack Grid */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-dark-card/90 border border-slate-200/90 dark:border-slate-800/80 shadow-sm">
+          <motion.div 
+            initial={{ opacity: 0, x: 25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.55 }}
+            className="lg:col-span-6 space-y-6"
+          >
+            <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-slate-800/80 shadow-sm">
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h3 className="text-xl font-heading font-bold text-slate-900 dark:text-white">
@@ -150,13 +173,14 @@ export const AboutSection = () => {
 
               {/* Skills Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                {skills.map((skill) => {
+                {skills.map((skill, idx) => {
                   const IconComp = skillIcons[skill.icon] || Sparkles;
 
                   return (
-                    <div
+                    <motion.div
                       key={skill.name}
-                      className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 hover:border-brand-accent/40 transition-colors flex items-center justify-between group"
+                      whileHover={{ scale: 1.02 }}
+                      className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 hover:border-brand-accent/40 transition-all flex items-center justify-between group shadow-xs"
                     >
                       <div className="flex items-center gap-3">
                         <div className="p-2 rounded-lg bg-white dark:bg-dark-card text-brand-accent dark:text-brand-cyan shadow-xs group-hover:scale-110 transition-transform">
@@ -175,7 +199,7 @@ export const AboutSection = () => {
                       <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-brand-accent/10 text-brand-accent dark:text-brand-cyan">
                         {skill.level}
                       </span>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
@@ -186,7 +210,7 @@ export const AboutSection = () => {
                 <span className="font-semibold text-emerald-600 dark:text-emerald-400">100% Guaranteed</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

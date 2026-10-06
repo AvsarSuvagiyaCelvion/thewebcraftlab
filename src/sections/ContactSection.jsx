@@ -117,7 +117,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 relative overflow-hidden bg-slate-50/50 dark:bg-dark-bg/50">
+    <section id="contact" className="py-20 sm:py-28 relative overflow-hidden bg-slate-50/70 dark:bg-dark-bg/50">
       {/* Background ambient glow */}
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-brand-accent/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />
@@ -125,18 +125,31 @@ export const ContactSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <SectionHeading
-          badge="Let's Build Something Great"
-          badgeIcon={Send}
-          title="Get a Free Project"
-          highlight="Quote & Proposal"
-          subtitle="Ready to transform your online presence? Fill out the brief form below or connect directly via Instagram DM or Email."
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <SectionHeading
+            badge="Let's Build Something Great"
+            badgeIcon={Send}
+            title="Get a Free Project"
+            highlight="Quote & Proposal"
+            subtitle="Ready to transform your online presence? Fill out the brief form below or connect directly via Instagram DM or Email."
+          />
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          {/* Left Column: Direct Contact Info (Email, Instagram, Surat Gujarat ONLY - NO PHONE) */}
-          <div className="lg:col-span-5 space-y-6">
+          {/* Left Column: Direct Contact Info */}
+          <motion.div 
+            initial={{ opacity: 0, x: -25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.55 }}
+            className="lg:col-span-5 space-y-6"
+          >
             
             <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-dark-card/90 border border-slate-200/90 dark:border-slate-800/80 shadow-sm space-y-6">
               <div>
@@ -239,11 +252,17 @@ export const ContactSection = () => {
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Right Column: Interactive Quote Request Form */}
-          <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 md:p-10 rounded-2xl bg-white dark:bg-dark-card/90 border border-slate-200/90 dark:border-slate-800/80 shadow-sm relative">
+          <motion.div 
+            initial={{ opacity: 0, x: 25 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.55 }}
+            className="lg:col-span-7"
+          >
+            <div className="p-6 sm:p-8 md:p-10 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-slate-800/80 shadow-sm relative">
               
               {isSubmitted ? (
                 <div className="py-12 text-center space-y-4">
@@ -416,7 +435,7 @@ export const ContactSection = () => {
               )}
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

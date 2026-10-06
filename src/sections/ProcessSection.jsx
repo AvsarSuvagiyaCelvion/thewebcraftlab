@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { 
   MessageSquareText, 
   LayoutDashboard, 
@@ -23,20 +24,27 @@ const processIcons = {
 
 export const ProcessSection = () => {
   return (
-    <section id="process" className="py-20 sm:py-28 relative overflow-hidden bg-slate-50/50 dark:bg-dark-bg/50">
+    <section id="process" className="py-20 sm:py-28 relative overflow-hidden bg-slate-50/70 dark:bg-dark-bg/50">
       {/* Background visual elements */}
       <div className="absolute top-1/4 left-10 w-72 h-72 bg-brand-accent/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <SectionHeading
-          badge="Simple 4-Step Journey"
-          badgeIcon={Clock}
-          title="From Concept to"
-          highlight="Live Launch"
-          subtitle="A transparent, collaborative, and battle-tested workflow that ensures your website is delivered on-time, bug-free, and built to convert."
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <SectionHeading
+            badge="Simple 4-Step Journey"
+            badgeIcon={Clock}
+            title="From Concept to"
+            highlight="Live Launch"
+            subtitle="A transparent, collaborative, and battle-tested workflow that ensures your website is delivered on-time, bug-free, and built to convert."
+          />
+        </motion.div>
 
         {/* Process Timeline Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative">
@@ -45,9 +53,14 @@ export const ProcessSection = () => {
             const IconComponent = processIcons[item.icon] || Sparkles;
 
             return (
-              <div
+              <motion.div
                 key={item.step}
-                className="relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-white dark:bg-dark-card/90 border border-slate-200/90 dark:border-slate-800/80 shadow-sm hover:shadow-xl hover:border-brand-accent/40 dark:hover:border-brand-accent/50 transition-all duration-300 group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.45, delay: index * 0.1 }}
+                whileHover={{ y: -6 }}
+                className="relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-white dark:bg-dark-card border border-slate-200/90 dark:border-slate-800/80 shadow-sm hover:shadow-xl hover:border-brand-accent/50 dark:hover:border-brand-accent/50 transition-all duration-300 group"
               >
                 {/* Step Top Header */}
                 <div>
@@ -89,7 +102,7 @@ export const ProcessSection = () => {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

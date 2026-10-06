@@ -27,7 +27,7 @@ export const Button = ({
 
   const variantStyles = {
     primary: "bg-gradient-to-r from-brand-accent via-purple-600 to-brand-cyan text-white shadow-lg shadow-brand-accent/25 hover:shadow-brand-accent/40 hover:scale-[1.02] active:scale-[0.98] border border-white/20",
-    secondary: "bg-slate-900/80 dark:bg-dark-card/90 text-slate-100 hover:text-white border border-slate-700 dark:border-slate-700/80 hover:border-brand-cyan/50 hover:bg-slate-800 dark:hover:bg-dark-surface shadow-md hover:scale-[1.02] active:scale-[0.98]",
+    secondary: "bg-white dark:bg-dark-card text-slate-800 dark:text-slate-100 hover:text-brand-accent dark:hover:text-white border border-slate-200 dark:border-slate-700/80 hover:border-brand-accent/50 dark:hover:border-brand-cyan/50 hover:bg-slate-50 dark:hover:bg-dark-surface shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98]",
     outline: "bg-transparent text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:border-brand-accent hover:text-brand-accent dark:hover:text-brand-cyan hover:bg-brand-accent/5",
     ghost: "bg-transparent text-slate-700 dark:text-slate-300 hover:text-brand-accent dark:hover:text-white hover:bg-slate-200/50 dark:hover:bg-slate-800/60",
     glow: "bg-gradient-to-r from-brand-cyan via-teal-500 to-brand-accent text-white shadow-lg shadow-brand-cyan/30 hover:shadow-brand-cyan/50 hover:scale-[1.02] active:scale-[0.98]",
