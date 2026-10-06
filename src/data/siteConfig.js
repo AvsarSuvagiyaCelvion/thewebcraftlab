@@ -20,11 +20,11 @@ export const siteConfig = {
       label: "Instagram"
     },
     github: {
-      url: "https://github.com",
+      url: "https://github.com/AvsarSuvagiyaCelvion",
       label: "GitHub"
     },
     linkedin: {
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/avsar-suvagiya-859755343/",
       label: "LinkedIn"
     }
   },

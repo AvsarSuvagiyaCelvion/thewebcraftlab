@@ -1,5 +1,6 @@
 export const projectCategories = ["All", "Business", "E-commerce", "Shopify", "React", "Full Stack"];
 
+// 100% Real, authentic projects built by The WebCraft Lab (Avsar Suvagiya)
 export const projects = [
   {
     id: "power-house-gym",
@@ -15,9 +16,9 @@ export const projects = [
     featured: true,
     isComingSoon: false,
     stats: {
-      speed: "0.8s load",
-      lighthouse: "99/100",
-      features: "Batches & Pricing Toggle"
+      location: "Jetpur, Gujarat",
+      tech: "React 18 + Vite",
+      type: "Fitness Business"
     }
   },
   {
@@ -34,9 +35,9 @@ export const projects = [
     featured: true,
     isComingSoon: false,
     stats: {
-      speed: "0.9s load",
-      lighthouse: "98/100",
-      leads: "Table Reservations"
+      type: "Restaurant & Dining",
+      features: "Online Table Booking",
+      stack: "MERN Stack"
     }
   },
   {
@@ -54,8 +55,8 @@ export const projects = [
     isComingSoon: false,
     stats: {
       platform: "Shopify Store",
-      speed: "Fast Storefront",
-      security: "100% Secure Checkout"
+      type: "Luxury Jewelry",
+      checkout: "Secure Checkout"
     }
   },
   {
@@ -70,11 +71,11 @@ export const projects = [
     liveDemo: "https://therimzimperfume.com",
     sourceCode: "https://github.com/AvsarSuvagiyaCelvion",
     featured: true,
-    isComingSoon: true, // Marked as Coming Soon per client request
+    isComingSoon: true, // Specifically marked as Coming Soon as requested
     stats: {
-      status: "Coming Soon",
-      design: "Luxury Aesthetic",
-      type: "Perfume Brand Store"
+      status: "Coming Soon 🚀",
+      platform: "Shopify E-Commerce",
+      category: "Luxury Perfumes"
     }
   },
   {
@@ -91,28 +92,9 @@ export const projects = [
     featured: false,
     isComingSoon: false,
     stats: {
-      speed: "0.6s load",
-      charts: "Visual Analytics",
-      tools: "Export to CSV"
-    }
-  },
-  {
-    id: "avsar-developer-portfolio",
-    title: "Developer Portfolio & Showcase",
-    category: "React",
-    secondaryCategory: "Business",
-    tagline: "Interactive developer portfolio with animated UI & skill matrices",
-    description: "High-performance personal brand and portfolio showcasing custom frontend design, animated project galleries, client services, and contact workflow.",
-    tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80",
-    liveDemo: "https://avsar-portfolio.vercel.app/",
-    sourceCode: "https://github.com/AvsarSuvagiyaCelvion",
-    featured: false,
-    isComingSoon: false,
-    stats: {
-      speed: "0.7s load",
-      lighthouse: "99/100",
-      experience: "Creative UI/UX"
+      type: "Web Application",
+      analytics: "Visual Charts",
+      tools: "CSV Export"
     }
   }
 ];
