@@ -162,10 +162,12 @@ export const ProjectsSection = () => {
         </div>
 
         {/* Modal display when project is clicked */}
-        <ProjectModal
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
 
       </div>
     </section>
