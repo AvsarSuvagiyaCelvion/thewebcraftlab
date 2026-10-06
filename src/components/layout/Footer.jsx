@@ -16,10 +16,13 @@ export const Footer = () => {
           {/* Brand & Mission */}
           <div className="lg:col-span-2 space-y-4">
             <a href="#hero" className="flex items-center gap-2.5 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-accent via-purple-600 to-brand-cyan p-0.5 shadow-md">
-                <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-                  <Code2 className="w-5 h-5 text-brand-cyan" />
-                </div>
+              <div className="w-10 h-10 rounded-xl overflow-hidden bg-slate-950 p-0.5 border border-brand-accent/40 shadow-md shadow-brand-accent/20 group-hover:shadow-brand-accent/40 group-hover:border-brand-cyan/60 transition-all duration-300 flex items-center justify-center">
+                <img
+                  src="/brand/logo.jpg"
+                  alt="The WebCraft Lab Logo"
+                  className="w-full h-full object-cover rounded-[8px] group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
+                />
               </div>
               <span className="font-heading font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
                 The WebCraft <span className="text-gradient">Lab</span>
