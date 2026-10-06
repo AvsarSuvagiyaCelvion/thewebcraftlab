@@ -13,7 +13,12 @@ export const ProjectsSection = () => {
 
   const filteredProjects = useMemo(() => {
     if (selectedCategory === 'All') return projects;
-    return projects.filter((project) => project.category.toLowerCase() === selectedCategory.toLowerCase());
+    const cat = selectedCategory.toLowerCase();
+    return projects.filter(
+      (project) =>
+        project.category.toLowerCase() === cat ||
+        (project.secondaryCategory && project.secondaryCategory.toLowerCase() === cat)
+    );
   }, [selectedCategory]);
 
   return (
@@ -29,7 +34,7 @@ export const ProjectsSection = () => {
           badgeIcon={Layers}
           title="Recent Work &"
           highlight="Digital Craft"
-          subtitle="Explore our curated collection of high-performance websites, client portals, and e-commerce storefronts designed to turn clicks into clients."
+          subtitle="Explore our live client projects and applications built with React, Shopify, and modern full-stack architectures."
         />
 
         {/* Filter Tabs */}
@@ -56,10 +61,14 @@ export const ProjectsSection = () => {
 
         {/* Projects Grid (1 col mobile, 2 col tablet, 3 col desktop) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group rounded-2xl bg-white dark:bg-dark-card/90 border border-slate-200/90 dark:border-slate-800/80 overflow-hidden shadow-sm hover:shadow-2xl hover:border-brand-accent/40 dark:hover:border-brand-accent/50 transition-all duration-300 flex flex-col justify-between"
+              className={`group rounded-2xl bg-white dark:bg-dark-card/90 border transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-2xl ${
+                project.isComingSoon
+                  ? 'border-purple-500/40 dark:border-purple-500/50 hover:border-purple-400'
+                  : 'border-slate-200/90 dark:border-slate-800/80 hover:border-brand-accent/40 dark:hover:border-brand-accent/50'
+              }`}
             >
               {/* Card Image Container */}
               <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-slate-900">
@@ -71,16 +80,21 @@ export const ProjectsSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-card/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
 
-                {/* Category & Badge overlay */}
+                {/* Category & Coming Soon overlay */}
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
                   <Badge variant="cyan" size="xs">
                     {project.category}
                   </Badge>
-                  {project.featured && (
+                  {project.isComingSoon ? (
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-600/30 animate-pulse-slow">
+                      <Sparkles className="w-3 h-3" />
+                      Coming Soon
+                    </span>
+                  ) : project.featured ? (
                     <Badge variant="accent" size="xs">
                       Featured
                     </Badge>
-                  )}
+                  ) : null}
                 </div>
 
                 {/* Hover Quick Action Overlay */}
@@ -98,7 +112,7 @@ export const ProjectsSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 rounded-full bg-brand-accent text-white hover:scale-110 shadow-lg transition-transform"
-                    title="Open live demo"
+                    title={project.isComingSoon ? "Preview Store Link" : "Open live demo"}
                     aria-label={`Open live demo of ${project.title}`}
                   >
                     <ExternalLink className="w-5 h-5" />
@@ -109,9 +123,11 @@ export const ProjectsSection = () => {
               {/* Card Content */}
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <h3 className="text-xl font-heading font-bold text-slate-900 dark:text-white group-hover:text-brand-accent dark:group-hover:text-brand-cyan transition-colors">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-xl font-heading font-bold text-slate-900 dark:text-white group-hover:text-brand-accent dark:group-hover:text-brand-cyan transition-colors">
+                      {project.title}
+                    </h3>
+                  </div>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1.5 line-clamp-2 leading-relaxed">
                     {project.tagline}
                   </p>
@@ -131,24 +147,39 @@ export const ProjectsSection = () => {
 
                 {/* Action Buttons */}
                 <div className="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
-                  <Button
-                    href={project.liveDemo}
-                    variant="primary"
-                    size="sm"
-                    className="flex-1"
-                    icon={ExternalLink}
-                    iconPosition="right"
-                  >
-                    Live Demo
-                  </Button>
-                  <Button
-                    href={project.sourceCode}
-                    variant="secondary"
-                    size="sm"
-                    className="px-3"
-                    icon={Github}
-                    ariaLabel="View source code on GitHub"
-                  />
+                  {project.isComingSoon ? (
+                    <Button
+                      href={project.liveDemo}
+                      variant="instagram"
+                      size="sm"
+                      className="flex-1"
+                      icon={Sparkles}
+                      iconPosition="left"
+                    >
+                      Coming Soon
+                    </Button>
+                  ) : (
+                    <Button
+                      href={project.liveDemo}
+                      variant="primary"
+                      size="sm"
+                      className="flex-1"
+                      icon={ExternalLink}
+                      iconPosition="right"
+                    >
+                      Live Demo
+                    </Button>
+                  )}
+                  {project.sourceCode && (
+                    <Button
+                      href={project.sourceCode}
+                      variant="secondary"
+                      size="sm"
+                      className="px-3"
+                      icon={Github}
+                      ariaLabel="View source code on GitHub"
+                    />
+                  )}
                   <button
                     onClick={() => setSelectedProject(project)}
                     className="text-xs font-semibold text-slate-500 hover:text-brand-accent dark:hover:text-white px-2 py-2"

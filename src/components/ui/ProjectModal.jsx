@@ -52,7 +52,14 @@ export const ProjectModal = ({ project, onClose }) => {
           <div className="absolute bottom-4 left-6 right-6">
             <div className="flex items-center gap-2 mb-2">
               <Badge variant="cyan">{project.category}</Badge>
-              {project.featured && <Badge variant="accent">Featured Project</Badge>}
+              {project.isComingSoon ? (
+                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  Coming Soon 🚀
+                </span>
+              ) : project.featured ? (
+                <Badge variant="accent">Featured Project</Badge>
+              ) : null}
             </div>
             <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white">
               {project.title}
@@ -102,23 +109,37 @@ export const ProjectModal = ({ project, onClose }) => {
 
           {/* Actions */}
           <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-200 dark:border-slate-800">
-            <Button
-              href={project.liveDemo}
-              variant="primary"
-              size="md"
-              icon={ExternalLink}
-              iconPosition="right"
-            >
-              Launch Live Demo
-            </Button>
-            <Button
-              href={project.sourceCode}
-              variant="secondary"
-              size="md"
-              icon={Github}
-            >
-              View Source Code
-            </Button>
+            {project.isComingSoon ? (
+              <Button
+                href={project.liveDemo}
+                variant="instagram"
+                size="md"
+                icon={Sparkles}
+                iconPosition="left"
+              >
+                Coming Soon / Launching Soon
+              </Button>
+            ) : (
+              <Button
+                href={project.liveDemo}
+                variant="primary"
+                size="md"
+                icon={ExternalLink}
+                iconPosition="right"
+              >
+                Launch Live Demo
+              </Button>
+            )}
+            {project.sourceCode && (
+              <Button
+                href={project.sourceCode}
+                variant="secondary"
+                size="md"
+                icon={Github}
+              >
+                View Source Code
+              </Button>
+            )}
             <Button
               onClick={onClose}
               variant="ghost"
