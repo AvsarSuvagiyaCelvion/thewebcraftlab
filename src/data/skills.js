@@ -49,7 +49,7 @@ export const skills = [
     icon: "Server"
   },
   {
-    name: "Git & GitHub",
+    name: "Git & Version Control",
     category: "Version Control",
     level: "Advanced",
     color: "from-red-500 to-rose-600",
@@ -72,13 +72,13 @@ export const skills = [
 ];
 
 export const developerBio = {
-  name: "Freelance Web Craftsman",
+  name: "Web Craftsmen",
   brand: "The WebCraft Lab",
   location: "Surat, Gujarat, India",
   headline: "Turning ideas into high-converting digital storefronts and web experiences.",
   paragraphs: [
-    "Hi, I'm a passionate freelance web developer and digital craftsman based in Surat, Gujarat. I founded The WebCraft Lab with a single mission: to help passionate business owners, startups, and creative professionals get websites that don't just look pretty, but actually win customers and generate leads.",
-    "Unlike bloated agencies that charge massive retainers or deliver slow template-stuffed sites, I build custom, clean-coded, lightning-fast web solutions with React and Tailwind CSS. You work directly with me from wireframe to deployment—ensuring fast communication, crystal-clear milestones, and zero hassle."
+    "The WebCraft Lab is a modern web development & digital craft studio based in Surat, Gujarat. We help ambitious business owners, startups, and local brands build high-impact web presences that win clients and accelerate growth.",
+    "Unlike bloated agencies that charge massive retainers or deliver slow template-stuffed sites, we build custom, clean-coded, lightning-fast web solutions with React and Tailwind CSS. You work directly with experienced digital craftsmen from wireframe to deployment—ensuring crystal-clear milestones, fast delivery, and transparent collaboration."
   ],
   coreValues: [
     { title: "Speed & Performance", desc: "Every millisecond counts. We optimize assets, bundle sizes, and scripts for instant loading." },

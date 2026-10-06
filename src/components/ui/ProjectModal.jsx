@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, ExternalLink, Github, CheckCircle2, Sparkles, Zap, Smartphone } from 'lucide-react';
+import { X, ExternalLink, CheckCircle2, Sparkles, Zap, Smartphone } from 'lucide-react';
 import Button from '../common/Button';
 import Badge from '../common/Badge';
 
@@ -128,16 +128,6 @@ export const ProjectModal = ({ project, onClose }) => {
                 iconPosition="right"
               >
                 Launch Live Demo
-              </Button>
-            )}
-            {project.sourceCode && (
-              <Button
-                href={project.sourceCode}
-                variant="secondary"
-                size="md"
-                icon={Github}
-              >
-                View Source Code
               </Button>
             )}
             <Button

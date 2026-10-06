@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, Mail, MapPin, Instagram, Github, Linkedin, ArrowUp, Heart } from 'lucide-react';
+import { Code2, Mail, MapPin, Instagram, ArrowUp, Heart } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
 
 export const Footer = () => {
@@ -47,7 +47,7 @@ export const Footer = () => {
               </a>
             </div>
 
-            {/* Social Links */}
+            {/* Social & Contact Links */}
             <div className="flex items-center gap-3 pt-2">
               <a
                 href={siteConfig.socials.instagram.url}
@@ -59,22 +59,11 @@ export const Footer = () => {
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href={siteConfig.socials.github.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`mailto:${siteConfig.email}`}
                 className="p-2.5 rounded-xl bg-slate-200 dark:bg-dark-card text-slate-700 dark:text-slate-300 hover:text-brand-accent hover:scale-110 transition-all border border-slate-300 dark:border-slate-800 min-h-[44px] min-w-[44px] flex items-center justify-center"
-                aria-label="View Github profile"
+                aria-label="Send Email Inquiry"
               >
-                <Github className="w-4 h-4" />
-              </a>
-              <a
-                href={siteConfig.socials.linkedin.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-slate-200 dark:bg-dark-card text-slate-700 dark:text-slate-300 hover:text-brand-cyan hover:scale-110 transition-all border border-slate-300 dark:border-slate-800 min-h-[44px] min-w-[44px] flex items-center justify-center"
-                aria-label="Connect on LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" />
+                <Mail className="w-4 h-4" />
               </a>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, ExternalLink, Github, Eye, Layers, Filter } from 'lucide-react';
+import { Sparkles, ExternalLink, Eye, Layers, Filter } from 'lucide-react';
 import { projects, projectCategories } from '../data/projects';
 import SectionHeading from '../components/common/SectionHeading';
 import GlowCard from '../components/common/GlowCard';
@@ -194,21 +194,11 @@ export const ProjectsSection = () => {
                         Live Demo
                       </Button>
                     )}
-                    {project.sourceCode && (
-                      <Button
-                        href={project.sourceCode}
-                        variant="secondary"
-                        size="sm"
-                        className="px-3"
-                        icon={Github}
-                        ariaLabel="View source code on GitHub"
-                      />
-                    )}
                     <button
                       onClick={() => setSelectedProject(project)}
-                      className="text-xs font-semibold text-slate-500 hover:text-brand-accent dark:hover:text-white px-2 py-2"
+                      className="text-xs font-semibold text-slate-500 hover:text-brand-accent dark:hover:text-white px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                     >
-                      Details
+                      View Details
                     </button>
                   </div>
                 </div>

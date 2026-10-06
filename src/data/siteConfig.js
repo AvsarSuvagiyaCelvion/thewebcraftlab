@@ -18,14 +18,6 @@ export const siteConfig = {
       url: "https://instagram.com/thewebcraftlab",
       handle: "@thewebcraftlab",
       label: "Instagram"
-    },
-    github: {
-      url: "https://github.com/AvsarSuvagiyaCelvion",
-      label: "GitHub"
-    },
-    linkedin: {
-      url: "https://www.linkedin.com/in/avsar-suvagiya-859755343/",
-      label: "LinkedIn"
     }
   },
 
