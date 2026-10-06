@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thewebcraftlab.com/sitemap.xml
+Sitemap: https://thewebcraftlab.vercel.app/sitemap.xml
