@@ -360,10 +360,11 @@ export const ContactSection = () => {
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-dark-bg border border-slate-200 dark:border-slate-800 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-accent transition-all"
                       >
-                        <option value="₹10,000 - ₹20,000 ($120 - $250)">₹10,000 - ₹20,000 ($120 - $250)</option>
-                        <option value="₹20,000 - ₹40,000 ($250 - $500)">₹20,000 - ₹40,000 ($250 - $500)</option>
-                        <option value="₹40,000 - ₹80,000 ($500 - $1,000)">₹40,000 - ₹80,000 ($500 - $1,000)</option>
-                        <option value="₹80,000+ ($1,000+)">₹80,000+ ($1,000+)</option>
+                        <option value="₹1000 - ₹2000">₹1000 - ₹2000</option>
+                        <option value="₹2000 - ₹4000">₹2000 - ₹4000</option>
+                        <option value="₹4000 - ₹8000">₹4000 - ₹8000</option>
+                        <option value="₹8000 - ₹10000">₹8000 - ₹10000</option>
+                        <option value="₹10000+">₹10000+</option>
                         <option value="Flexible / Need Consultation">Flexible / Need Consultation</option>
                       </select>
                     </div>
