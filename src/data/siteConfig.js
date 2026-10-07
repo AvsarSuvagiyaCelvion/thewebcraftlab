@@ -39,3 +39,22 @@ export const siteConfig = {
     { label: "Support Included", value: "30 Days", sub: "Free post-launch warranty" }
   ]
 };
+
+// 🚀 Automatic Launch Date: Sunday, 10:00 PM IST (Auto-launches without manual effort)
+export const getTargetLaunchDate = () => {
+  const target = new Date("2026-10-11T22:00:00+05:30");
+  if (isNaN(target.getTime())) {
+    const now = new Date();
+    const fallback = new Date();
+    const daysUntilSunday = (7 - now.getDay()) % 7;
+    fallback.setDate(now.getDate() + daysUntilSunday);
+    fallback.setHours(22, 0, 0, 0);
+    return fallback;
+  }
+  return target;
+};
+
+export const isWebsiteOfficiallyLaunched = () => {
+  const target = getTargetLaunchDate();
+  return new Date().getTime() >= target.getTime();
+};

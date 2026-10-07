@@ -12,10 +12,10 @@ import {
   Zap,
   Eye
 } from 'lucide-react';
-import { siteConfig } from '../../data/siteConfig';
+import { siteConfig, getTargetLaunchDate } from '../../data/siteConfig';
 import Button from '../common/Button';
 
-export const ComingSoonPage = ({ onUnlockPreview }) => {
+export const ComingSoonPage = ({ onUnlockPreview, onLaunchComplete }) => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -25,16 +25,7 @@ export const ComingSoonPage = ({ onUnlockPreview }) => {
 
   // Calculate target launch date (Upcoming Sunday 10:00 PM / 22:00)
   useEffect(() => {
-    const getNextSunday = () => {
-      const now = new Date();
-      const nextSunday = new Date();
-      const daysUntilSunday = (7 - now.getDay()) % 7 || 7;
-      nextSunday.setDate(now.getDate() + daysUntilSunday);
-      nextSunday.setHours(22, 0, 0, 0); // 10:00 PM Sunday
-      return nextSunday;
-    };
-
-    const targetDate = getNextSunday();
+    const targetDate = getTargetLaunchDate();
 
     const updateTimer = () => {
       const now = new Date();
@@ -42,6 +33,9 @@ export const ComingSoonPage = ({ onUnlockPreview }) => {
 
       if (diff <= 0) {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        if (onLaunchComplete) {
+          onLaunchComplete();
+        }
         return;
       }
 
@@ -56,7 +50,7 @@ export const ComingSoonPage = ({ onUnlockPreview }) => {
     updateTimer();
     const interval = setInterval(updateTimer, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [onLaunchComplete]);
 
   return (
     <div className="min-h-screen bg-slate-950 text-white relative overflow-hidden flex flex-col justify-between p-4 sm:p-8 select-none">
