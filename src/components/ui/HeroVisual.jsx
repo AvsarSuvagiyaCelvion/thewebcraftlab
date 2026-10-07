@@ -10,7 +10,8 @@ import {
   Star,
   CheckCircle2,
   ArrowUpRight,
-  Eye
+  Eye,
+  Rocket
 } from 'lucide-react';
 import Badge from '../common/Badge';
 
@@ -33,11 +34,12 @@ export const HeroVisual = () => {
       id: "luxury-perfume-store",
       title: "Rimzim Perfumes",
       category: "Shopify E-Commerce",
-      badge: "Shopify Store",
+      badge: "Coming Soon 🚀",
+      isComingSoon: true,
       image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1000&q=80",
-      liveDemo: "https://therimzimperfume.com",
-      metric: "Luxury",
-      metricSub: "Conversion Funnel",
+      liveDemo: "#projects",
+      metric: "In Build",
+      metricSub: "Coming Soon 🚀",
       accent: "from-amber-400 to-yellow-600"
     },
     {
@@ -145,9 +147,9 @@ export const HeroVisual = () => {
           </div>
 
           {/* Status Indicator */}
-          <div className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-            <span className="hidden sm:inline">Live</span>
+          <div className={`flex items-center gap-1.5 text-[11px] font-semibold ${activeProject.isComingSoon ? 'text-amber-500 dark:text-amber-400' : 'text-emerald-600 dark:text-emerald-400'}`}>
+            <span className={`w-2 h-2 rounded-full ${activeProject.isComingSoon ? 'bg-amber-400' : 'bg-emerald-500'} animate-ping`} />
+            <span className="hidden sm:inline">{activeProject.isComingSoon ? 'Coming Soon' : 'Live'}</span>
           </div>
         </div>
 
@@ -176,7 +178,7 @@ export const HeroVisual = () => {
                   <span className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-bold bg-white/90 dark:bg-slate-900/90 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 shadow-md">
                     {activeProject.category}
                   </span>
-                  <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-brand-accent text-white shadow-md">
+                  <span className={`px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold shadow-md ${activeProject.isComingSoon ? 'bg-amber-500 text-slate-950 font-extrabold' : 'bg-brand-accent text-white'}`}>
                     {activeProject.badge}
                   </span>
                 </div>
@@ -192,16 +194,27 @@ export const HeroVisual = () => {
                     </p>
                   </div>
 
-                  <a
-                    href={activeProject.liveDemo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 sm:p-2.5 rounded-xl bg-brand-accent hover:bg-brand-accent/90 text-white shadow-lg hover:scale-110 active:scale-95 transition-all flex items-center justify-center min-h-[36px] min-w-[36px] sm:min-h-[40px] sm:min-w-[40px]"
-                    title="Visit live website"
-                    aria-label={`Visit live website of ${activeProject.title}`}
-                  >
-                    <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                  </a>
+                  {activeProject.isComingSoon ? (
+                    <a
+                      href="#projects"
+                      className="px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl bg-amber-500/90 hover:bg-amber-500 text-slate-950 text-[11px] font-bold shadow-lg flex items-center gap-1.5 hover:scale-105 active:scale-95 transition-all"
+                      title="Project in Progress"
+                    >
+                      <Rocket className="w-3.5 h-3.5" />
+                      <span>Soon</span>
+                    </a>
+                  ) : (
+                    <a
+                      href={activeProject.liveDemo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 sm:p-2.5 rounded-xl bg-brand-accent hover:bg-brand-accent/90 text-white shadow-lg hover:scale-110 active:scale-95 transition-all flex items-center justify-center min-h-[36px] min-w-[36px] sm:min-h-[40px] sm:min-w-[40px]"
+                      title="Visit live website"
+                      aria-label={`Visit live website of ${activeProject.title}`}
+                    >
+                      <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    </a>
+                  )}
                 </div>
               </div>
 
