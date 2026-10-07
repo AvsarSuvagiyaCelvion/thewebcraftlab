@@ -11,8 +11,8 @@ import { createFastWebsite } from '@webcraft/core';
 
 export const ClientGrowthEngine = () => {
   const website = createFastWebsite({
-    brand: "Your Local Business",
-    location: "Surat, Gujarat & Global",
+    brand: "Your Business & Brand",
+    location: "Remote & Worldwide Digital Studio",
     features: [
       "Ultra-Fast Vite + React",
       "Tailwind Pixel-Perfect UI",
@@ -31,7 +31,7 @@ export const ClientGrowthEngine = () => {
   bounce-rate: -42%;
   inquiries: +150%;
   mobile-optimized: true;
-  crafted-in: "Surat, Gujarat";
+  crafted-by: "The WebCraft Lab";
 }`,
     metrics: `// Live Core Web Vitals
 {
@@ -66,7 +66,7 @@ export const ClientGrowthEngine = () => {
       {/* Floating Badge 2 */}
       <div className="absolute -bottom-5 -right-3 z-20 hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/90 text-white border border-brand-cyan/40 shadow-xl backdrop-blur-md text-xs font-semibold animate-float" style={{ animationDelay: '1.5s' }}>
         <Sparkles className="w-3.5 h-3.5 text-brand-cyan" />
-        <span>📍 Crafted in Surat, Gujarat</span>
+        <span>🚀 100% Client Satisfaction</span>
       </div>
 
       {/* Code Card Terminal */}

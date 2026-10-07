@@ -8,14 +8,14 @@ export const projects = [
     category: "Business",
     secondaryCategory: "React",
     tagline: "Modern interactive gym web app with batch programs & membership pricing",
-    description: "A modern, fully responsive, animation-rich frontend web application for Power House Gym in Jetpur. Features specialized programs for Men, Women & Kids, interactive class booking modals, animated stat counters, monthly/yearly membership price toggle, category-filtered photo gallery with Lightbox, and live location details.",
+    description: "A modern, fully responsive, animation-rich frontend web application for a premier fitness gym. Features specialized programs for Men, Women & Kids, interactive class booking modals, animated stat counters, monthly/yearly membership price toggle, category-filtered photo gallery with Lightbox, and interactive schedules.",
     tech: ["React", "Vite", "Tailwind CSS", "Framer Motion", "React Router"],
     image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80",
     liveDemo: "https://powerhousegym-seven.vercel.app/",
     featured: true,
     isComingSoon: false,
     stats: {
-      location: "Jetpur, Gujarat",
+      location: "Client Project",
       tech: "React 18 + Vite",
       type: "Fitness Business"
     }

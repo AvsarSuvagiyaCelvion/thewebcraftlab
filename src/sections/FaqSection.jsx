@@ -14,7 +14,7 @@ export const FaqSection = () => {
   };
 
   return (
-    <section id="faq" className="py-12 sm:py-20 lg:py-24 relative overflow-hidden">
+    <section id="faq" className="py-8 sm:py-12 lg:py-16 relative overflow-hidden">
       {/* Background visual highlight */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />
 

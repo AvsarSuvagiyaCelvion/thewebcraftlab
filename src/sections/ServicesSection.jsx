@@ -29,7 +29,7 @@ const serviceIcons = {
 
 export const ServicesSection = () => {
   return (
-    <section id="services" className="py-12 sm:py-20 lg:py-24 relative overflow-hidden bg-slate-50/70 dark:bg-dark-bg/50">
+    <section id="services" className="py-8 sm:py-12 lg:py-16 relative overflow-hidden bg-slate-50/70 dark:bg-dark-bg/50">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-brand-accent/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />

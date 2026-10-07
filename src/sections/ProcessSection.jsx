@@ -24,7 +24,7 @@ const processIcons = {
 
 export const ProcessSection = () => {
   return (
-    <section id="process" className="py-12 sm:py-20 lg:py-24 relative overflow-hidden bg-slate-50/70 dark:bg-dark-bg/50">
+    <section id="process" className="py-8 sm:py-12 lg:py-16 relative overflow-hidden bg-slate-50/70 dark:bg-dark-bg/50">
       {/* Background visual elements */}
       <div className="absolute top-1/4 left-10 w-72 h-72 bg-brand-accent/5 rounded-full blur-3xl pointer-events-none" />
 

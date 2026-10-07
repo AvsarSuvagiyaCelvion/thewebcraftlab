@@ -6,26 +6,10 @@ import Button from '../components/common/Button';
 import HeroVisual from '../components/ui/HeroVisual';
 
 export const HeroSection = () => {
-  const [currentNicheIndex, setCurrentNicheIndex] = useState(0);
-  const targetNiches = [
-    "Growing Businesses",
-    "Restaurants & Cafes",
-    "Gyms & Fitness Centers",
-    "Jewelry & Luxury Brands",
-    "Fashion & Boutiques"
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentNicheIndex((prev) => (prev + 1) % targetNiches.length);
-    }, 3200);
-    return () => clearInterval(timer);
-  }, [targetNiches.length]);
-
   return (
     <section
       id="hero"
-      className="relative min-h-0 sm:min-h-screen pt-20 pb-8 sm:pt-28 sm:pb-16 lg:pt-36 lg:pb-24 flex items-center overflow-hidden bg-radial-grid"
+      className="relative min-h-0 sm:min-h-screen pt-16 pb-6 sm:pt-24 sm:pb-12 lg:pt-28 lg:pb-16 flex items-center overflow-hidden bg-radial-grid"
     >
       {/* Dynamic Animated Background Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[750px] h-[250px] sm:h-[350px] bg-hero-glow rounded-full blur-3xl pointer-events-none -z-10" />

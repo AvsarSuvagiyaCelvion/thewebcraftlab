@@ -18,7 +18,7 @@ export const whyChooseUs = [
     badge: "Google Ready"
   },
   {
-    icon: "BadgeIndianRupee",
+    icon: "BadgeDollarSign",
     title: "Transparent & Affordable",
     description: "No hidden agency markups or surprise fees. Clear upfront pricing packages customized to fit startup and local business budgets.",
     badge: "Fair Pricing"

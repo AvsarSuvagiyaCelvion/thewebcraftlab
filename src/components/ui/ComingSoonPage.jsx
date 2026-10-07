@@ -23,14 +23,14 @@ export const ComingSoonPage = ({ onUnlockPreview }) => {
     seconds: 0
   });
 
-  // Calculate target launch date (Upcoming Sunday midnight/morning)
+  // Calculate target launch date (Upcoming Sunday 10:00 PM / 22:00)
   useEffect(() => {
     const getNextSunday = () => {
       const now = new Date();
       const nextSunday = new Date();
       const daysUntilSunday = (7 - now.getDay()) % 7 || 7;
       nextSunday.setDate(now.getDate() + daysUntilSunday);
-      nextSunday.setHours(10, 0, 0, 0); // 10:00 AM Sunday
+      nextSunday.setHours(22, 0, 0, 0); // 10:00 PM Sunday
       return nextSunday;
     };
 
@@ -82,7 +82,7 @@ export const ComingSoonPage = ({ onUnlockPreview }) => {
 
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-accent/15 border border-brand-accent/30 text-brand-cyan shadow-sm">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-          <span>Official Launch This Sunday</span>
+          <span>Official Launch: Sunday at 10:00 PM</span>
         </div>
       </header>
 

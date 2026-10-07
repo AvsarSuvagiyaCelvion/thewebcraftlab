@@ -40,7 +40,7 @@ const skillIcons = {
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-12 sm:py-20 lg:py-24 relative overflow-hidden bg-slate-50/70 dark:bg-dark-bg/50">
+    <section id="about" className="py-8 sm:py-12 lg:py-16 relative overflow-hidden bg-slate-50/70 dark:bg-dark-bg/50">
       {/* Glow behind section */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-accent/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -56,9 +56,9 @@ export const AboutSection = () => {
           <SectionHeading
             badge="About The Craft"
             badgeIcon={User}
-            title="The Developer Behind"
+            title="The Developers Behind"
             highlight="The WebCraft Lab"
-            subtitle="A dedicated freelance developer in Surat, Gujarat helping businesses modernise their web presence."
+            subtitle="A dedicated web development studio helping modern businesses establish a powerful digital presence."
           />
         </motion.div>
 

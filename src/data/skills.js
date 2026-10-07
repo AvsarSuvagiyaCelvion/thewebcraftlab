@@ -74,10 +74,10 @@ export const skills = [
 export const developerBio = {
   name: "Web Craftsmen",
   brand: "The WebCraft Lab",
-  location: "Surat, Gujarat, India",
+  location: "Remote / Worldwide Digital Studio",
   headline: "Turning ideas into high-converting digital storefronts and web experiences.",
   paragraphs: [
-    "The WebCraft Lab is a modern web development & digital craft studio based in Surat, Gujarat. We help ambitious business owners, startups, and local brands build high-impact web presences that win clients and accelerate growth.",
+    "The WebCraft Lab is a modern web development & digital craft studio. We help ambitious business owners, startups, and growing brands build high-impact web presences that win clients and accelerate growth.",
     "Unlike bloated agencies that charge massive retainers or deliver slow template-stuffed sites, we build custom, clean-coded, lightning-fast web solutions with React and Tailwind CSS. You work directly with experienced digital craftsmen from wireframe to deployment—ensuring crystal-clear milestones, fast delivery, and transparent collaboration."
   ],
   coreValues: [

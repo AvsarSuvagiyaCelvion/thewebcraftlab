@@ -7,10 +7,10 @@ export const siteConfig = {
   // Strictly NO phone number as required
   email: "thewebcraftlab@gmail.com",
   location: {
-    city: "Surat",
-    state: "Gujarat",
-    country: "India",
-    display: "Surat, Gujarat, India"
+    city: "Remote",
+    state: "Global",
+    country: "Worldwide",
+    display: "Remote / Worldwide Studio"
   },
   
   socials: {

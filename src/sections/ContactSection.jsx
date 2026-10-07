@@ -118,7 +118,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-20 lg:py-24 relative overflow-hidden bg-slate-50/70 dark:bg-dark-bg/50">
+    <section id="contact" className="py-8 sm:py-12 lg:py-16 relative overflow-hidden bg-slate-50/70 dark:bg-dark-bg/50">
       {/* Background ambient glow */}
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-brand-accent/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />
@@ -216,17 +216,17 @@ export const ContactSection = () => {
                   </div>
                 </div>
 
-                {/* Location Card */}
+                {/* Global Availability Card */}
                 <div className="p-3 sm:p-4 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 flex items-center gap-2.5 sm:gap-3">
                   <div className="p-2 sm:p-2.5 rounded-lg bg-brand-cyan/10 text-brand-cyan">
                     <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
                     <div className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium">
-                      Location & Craft Base
+                      Studio Availability
                     </div>
                     <div className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
-                      {siteConfig.location.display}
+                      Worldwide / Remote Studio
                     </div>
                   </div>
                 </div>

@@ -4,7 +4,7 @@ import {
   Zap, 
   Smartphone, 
   SearchCheck, 
-  BadgeIndianRupee, 
+  BadgeDollarSign, 
   Clock, 
   Headphones, 
   ShieldCheck,
@@ -20,14 +20,14 @@ const benefitIcons = {
   Zap,
   Smartphone,
   SearchCheck,
-  BadgeIndianRupee,
+  BadgeDollarSign,
   Clock,
   Headphones
 };
 
 export const WhyChooseSection = () => {
   return (
-    <section id="why-us" className="py-12 sm:py-20 lg:py-24 relative overflow-hidden">
+    <section id="why-us" className="py-8 sm:py-12 lg:py-16 relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-1/2 right-10 w-80 h-80 bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />
 

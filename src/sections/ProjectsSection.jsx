@@ -23,7 +23,7 @@ export const ProjectsSection = () => {
   }, [selectedCategory]);
 
   return (
-    <section id="projects" className="py-12 sm:py-20 lg:py-24 relative overflow-hidden">
+    <section id="projects" className="py-8 sm:py-12 lg:py-16 relative overflow-hidden">
       {/* Background radial highlight */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />
 
