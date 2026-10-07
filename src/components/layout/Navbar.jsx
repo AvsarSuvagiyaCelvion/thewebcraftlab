@@ -91,9 +91,6 @@ export const Navbar = () => {
               <span className="font-heading font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white leading-none">
                 The WebCraft <span className="text-gradient">Lab</span>
               </span>
-              <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase mt-1">
-                Surat, Gujarat
-              </span>
             </div>
           </a>
 

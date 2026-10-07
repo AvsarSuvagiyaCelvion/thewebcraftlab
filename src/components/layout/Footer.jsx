@@ -34,10 +34,6 @@ export const Footer = () => {
             </p>
 
             <div className="space-y-2 pt-2 text-sm text-slate-600 dark:text-slate-300">
-              <div className="flex items-center gap-2.5">
-                <MapPin className="w-4 h-4 text-brand-cyan shrink-0" />
-                <span>{siteConfig.location.display}</span>
-              </div>
               <a
                 href={`mailto:${siteConfig.email}`}
                 className="flex items-center gap-2.5 hover:text-brand-accent dark:hover:text-brand-cyan transition-colors"
@@ -141,9 +137,10 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
           <p>© {currentYear} {siteConfig.brandName}. All rights reserved.</p>
-          <div className="flex items-center gap-1">
-            <span>Crafted with passion in</span>
-            <span className="font-semibold text-slate-700 dark:text-slate-300">Surat, Gujarat, India</span>
+          <div className="flex items-center gap-1.5">
+            <span>Handcrafted with</span>
+            <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline" />
+            <span className="font-semibold text-slate-700 dark:text-slate-300">for Modern Brands</span>
           </div>
         </div>
       </div>
