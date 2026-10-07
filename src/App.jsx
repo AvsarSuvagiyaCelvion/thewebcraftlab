@@ -5,6 +5,8 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import FloatingInstagram from './components/layout/FloatingInstagram';
 import ScrollToTop from './components/layout/ScrollToTop';
+import ScrollProgressBar from './components/layout/ScrollProgressBar';
+import InfiniteMarquee from './components/common/InfiniteMarquee';
 
 import HeroSection from './sections/HeroSection';
 import ServicesSection from './sections/ServicesSection';
@@ -20,12 +22,16 @@ function App() {
     <ThemeProvider>
       <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-dark-bg dark:text-slate-100 transition-colors duration-300 relative selection:bg-brand-accent/20 selection:text-brand-accent">
         
+        {/* Animated Scroll Progress Bar at Top */}
+        <ScrollProgressBar />
+
         {/* Sticky Header Navigation */}
         <Navbar />
 
         {/* Main Content Sections */}
         <main className="flex-grow">
           <HeroSection />
+          <InfiniteMarquee />
           <ServicesSection />
           <ProjectsSection />
           <ProcessSection />

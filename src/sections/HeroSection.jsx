@@ -1,11 +1,27 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Send, ShieldCheck, Zap, Star, MapPin, CheckCircle2 } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Sparkles, Send, ShieldCheck, Zap, Star, Globe2, CheckCircle2 } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 import Button from '../components/common/Button';
 import HeroVisual from '../components/ui/HeroVisual';
 
 export const HeroSection = () => {
+  const [currentNicheIndex, setCurrentNicheIndex] = useState(0);
+  const targetNiches = [
+    "Growing Businesses",
+    "Restaurants & Cafes",
+    "Gyms & Fitness Centers",
+    "Jewelry & Luxury Brands",
+    "Fashion & Boutiques"
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentNicheIndex((prev) => (prev + 1) % targetNiches.length);
+    }, 3200);
+    return () => clearInterval(timer);
+  }, [targetNiches.length]);
+
   return (
     <section
       id="hero"
@@ -36,19 +52,33 @@ export const HeroSection = () => {
             >
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
               <span className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-brand-cyan" />
-                Available for New Projects in <strong className="font-bold">Surat & Global</strong>
+                <Globe2 className="w-3.5 h-3.5 text-brand-cyan" />
+                Available for New Client Projects Worldwide
               </span>
             </motion.div>
 
-            {/* Main Headline */}
+            {/* Main Headline with Dynamic Rotating Text */}
             <motion.h1 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-6xl font-heading font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.18] sm:leading-[1.12]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.2] sm:leading-[1.12]"
             >
-              We craft <span className="text-gradient">fast, modern websites</span> that bring you clients.
+              We craft <span className="text-gradient">fast, modern websites</span> for{' '}
+              <span className="inline-block relative h-[1.25em] min-w-[200px] sm:min-w-[320px] text-left align-bottom">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={targetNiches[currentNicheIndex]}
+                    initial={{ y: 24, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -24, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: "easeOut" }}
+                    className="absolute left-0 top-0 text-cyan-500 dark:text-brand-cyan underline decoration-brand-accent/40 decoration-wavy decoration-2"
+                  >
+                    {targetNiches[currentNicheIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
             </motion.h1>
 
             {/* Subtext */}

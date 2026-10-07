@@ -40,6 +40,7 @@ export default {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'float': 'float 6s ease-in-out infinite',
         'glow': 'glow 3s ease-in-out infinite alternate',
+        'marquee': 'marquee 30s linear infinite',
       },
       keyframes: {
         float: {
@@ -49,6 +50,10 @@ export default {
         glow: {
           '0%': { opacity: '0.4', filter: 'blur(20px)' },
           '100%': { opacity: '0.8', filter: 'blur(28px)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-33.333333%)' },
         }
       },
       backgroundImage: {
