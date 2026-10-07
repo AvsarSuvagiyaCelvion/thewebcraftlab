@@ -229,7 +229,7 @@ export const HeroVisual = () => {
         <div className="px-5 py-3 bg-white dark:bg-slate-950 border-t border-slate-200/80 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
           <div className="flex items-center gap-1.5 font-medium">
             <Sparkles className="w-3.5 h-3.5 text-brand-cyan" />
-            <span>Crafted in Surat, Gujarat</span>
+            <span>Crafted with Precision & Speed</span>
           </div>
           <a
             href="#projects"

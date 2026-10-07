@@ -57,28 +57,14 @@ export const HeroSection = () => {
               </span>
             </motion.div>
 
-            {/* Main Headline with Dynamic Rotating Text */}
+            {/* Main Headline */}
             <motion.h1 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.2] sm:leading-[1.12]"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.18] sm:leading-[1.12]"
             >
-              We craft <span className="text-gradient">fast, modern websites</span> for{' '}
-              <span className="inline-block relative h-[1.25em] min-w-[200px] sm:min-w-[320px] text-left align-bottom">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={targetNiches[currentNicheIndex]}
-                    initial={{ y: 24, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -24, opacity: 0 }}
-                    transition={{ duration: 0.35, ease: "easeOut" }}
-                    className="absolute left-0 top-0 text-cyan-500 dark:text-brand-cyan underline decoration-brand-accent/40 decoration-wavy decoration-2"
-                  >
-                    {targetNiches[currentNicheIndex]}
-                  </motion.span>
-                </AnimatePresence>
-              </span>
+              We craft <span className="text-gradient">fast, modern websites</span> that bring you clients.
             </motion.h1>
 
             {/* Subtext */}
