@@ -174,15 +174,7 @@ export const ComingSoonPage = ({ onUnlockPreview, onLaunchComplete }) => {
       <footer className="max-w-6xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 py-4 border-t border-slate-900">
         <p>© {new Date().getFullYear()} The WebCraft Lab. All rights reserved.</p>
         
-        {/* Secret Button to Preview Full Site for You */}
-        <button
-          onClick={onUnlockPreview}
-          className="inline-flex items-center gap-1.5 text-slate-500 hover:text-slate-300 text-xs px-2.5 py-1 rounded-lg hover:bg-slate-900 transition-colors cursor-pointer"
-          title="Owner Preview Mode"
-        >
-          <Eye className="w-3.5 h-3.5 text-brand-cyan" />
-          <span>Preview Full Website (Owner Access)</span>
-        </button>
+       
       </footer>
 
     </div>
