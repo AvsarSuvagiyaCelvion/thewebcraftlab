@@ -124,7 +124,7 @@ export const Navbar = () => {
               icon={Send}
               iconPosition="right"
             >
-              Hire Me
+              Contact Us
             </Button>
           </div>
 
@@ -183,7 +183,7 @@ export const Navbar = () => {
                 icon={Send}
                 iconPosition="right"
               >
-                Hire Me / Get Quote
+                Contact Us / Get Quote
               </Button>
               <Button
                 href={siteConfig.socials.instagram.url}

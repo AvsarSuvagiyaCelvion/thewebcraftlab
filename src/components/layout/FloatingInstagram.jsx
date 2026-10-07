@@ -1,10 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Instagram, MessageCircle, Sparkles } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
 
 export const FloatingInstagram = () => {
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="fixed bottom-20 right-6 z-40 flex items-center group">
+    <div
+      className={`fixed right-6 z-40 flex items-center group transition-all duration-300 ${
+        hasScrolled ? 'bottom-20' : 'bottom-6'
+      }`}
+    >
       {/* Tooltip bubble (opens to the left) */}
       <div className="hidden sm:block absolute right-full mr-3 px-3 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-semibold whitespace-nowrap shadow-xl border border-slate-700/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
         💬 Chat on Instagram DM
