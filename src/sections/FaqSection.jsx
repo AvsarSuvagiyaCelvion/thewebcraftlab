@@ -14,7 +14,7 @@ export const FaqSection = () => {
   };
 
   return (
-    <section id="faq" className="py-20 sm:py-28 relative overflow-hidden">
+    <section id="faq" className="py-12 sm:py-20 lg:py-24 relative overflow-hidden">
       {/* Background visual highlight */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -37,7 +37,7 @@ export const FaqSection = () => {
         </motion.div>
 
         {/* Accordion List */}
-        <div className="space-y-4">
+        <div className="space-y-2.5 sm:space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
@@ -57,21 +57,21 @@ export const FaqSection = () => {
                 <button
                   type="button"
                   onClick={() => toggleFaq(index)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent min-h-[52px]"
+                  className="w-full p-3.5 sm:p-6 text-left flex items-center justify-between gap-3 sm:gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent min-h-[44px] sm:min-h-[52px]"
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${index}`}
                 >
-                  <span className="text-base sm:text-lg font-heading font-semibold text-slate-900 dark:text-white leading-snug">
+                  <span className="text-sm sm:text-lg font-heading font-semibold text-slate-900 dark:text-white leading-snug">
                     {faq.question}
                   </span>
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                    className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
                       isOpen
                         ? 'bg-brand-accent text-white rotate-180 shadow-xs'
                         : 'bg-slate-100 dark:bg-slate-800 text-slate-500'
                     }`}
                   >
-                    <ChevronDown className="w-4 h-4" />
+                    <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                 </button>
 
@@ -83,7 +83,7 @@ export const FaqSection = () => {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.25, ease: "easeInOut" }}
-                      className="px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 mt-1"
+                      className="px-3.5 sm:px-6 pb-4 sm:pb-6 pt-1 text-xs sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 mt-1"
                     >
                       {faq.answer}
                     </motion.div>
@@ -100,13 +100,13 @@ export const FaqSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-12 text-center p-6 rounded-2xl bg-white dark:bg-dark-card/40 border border-slate-200/80 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm"
+          className="mt-8 sm:mt-12 text-center p-4 sm:p-6 rounded-2xl bg-white dark:bg-dark-card/40 border border-slate-200/80 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 shadow-sm"
         >
-          <div className="text-left">
-            <h4 className="font-heading font-bold text-slate-900 dark:text-white text-base">
+          <div className="text-center sm:text-left">
+            <h4 className="font-heading font-bold text-slate-900 dark:text-white text-sm sm:text-base">
               Have a question that is not answered here?
             </h4>
-            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-[11px] sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">
               Send a quick direct message on Instagram or email us directly.
             </p>
           </div>
@@ -117,6 +117,7 @@ export const FaqSection = () => {
             target="_blank"
             rel="noopener noreferrer"
             icon={MessageCircle}
+            className="w-full sm:w-auto"
           >
             Ask on Instagram
           </Button>

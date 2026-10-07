@@ -23,7 +23,7 @@ export const ProjectsSection = () => {
   }, [selectedCategory]);
 
   return (
-    <section id="projects" className="py-20 sm:py-28 relative overflow-hidden">
+    <section id="projects" className="py-12 sm:py-20 lg:py-24 relative overflow-hidden">
       {/* Background radial highlight */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -51,7 +51,7 @@ export const ProjectsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex items-center justify-center flex-wrap gap-2 mb-12"
+          className="flex items-center justify-start sm:justify-center overflow-x-auto pb-2 sm:pb-0 no-scrollbar gap-2 mb-6 sm:mb-12 -mx-4 px-4 sm:mx-0 sm:px-0"
         >
           {projectCategories.map((category) => {
             const isActive = selectedCategory === category;
@@ -60,7 +60,7 @@ export const ProjectsSection = () => {
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 type="button"
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 min-h-[40px] ${
+                className={`shrink-0 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 min-h-[36px] sm:min-h-[40px] ${
                   isActive
                     ? 'bg-brand-accent text-white shadow-md shadow-brand-accent/25 scale-105'
                     : 'bg-white dark:bg-dark-card text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 shadow-xs'
@@ -76,7 +76,7 @@ export const ProjectsSection = () => {
         {/* Projects Grid with AnimatePresence */}
         <motion.div 
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
         >
           <AnimatePresence>
             {filteredProjects.map((project, index) => (
@@ -87,7 +87,7 @@ export const ProjectsSection = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.35, delay: index * 0.05 }}
-                whileHover={{ y: -6 }}
+                whileHover={{ y: -4 }}
                 className={`group rounded-2xl bg-white dark:bg-dark-card/90 border transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-2xl ${
                   project.isComingSoon
                     ? 'border-purple-500/40 dark:border-purple-500/50 hover:border-purple-500'
@@ -95,7 +95,7 @@ export const ProjectsSection = () => {
                 }`}
               >
                 {/* Card Image Container */}
-                <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-slate-900">
+                <div className="relative h-44 sm:h-56 w-full overflow-hidden bg-slate-900">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -105,12 +105,12 @@ export const ProjectsSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-card/90 via-black/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
 
                   {/* Category & Coming Soon overlay */}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                  <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-3 sm:left-3 sm:right-3 flex items-center justify-between">
                     <Badge variant="cyan" size="xs">
                       {project.category}
                     </Badge>
                     {project.isComingSoon ? (
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-600/30 animate-pulse-slow">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-600/30 animate-pulse-slow">
                         <Sparkles className="w-3 h-3" />
                         Coming Soon
                       </span>
@@ -145,24 +145,24 @@ export const ProjectsSection = () => {
                 </div>
 
                 {/* Card Content */}
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="text-xl font-heading font-bold text-slate-900 dark:text-white group-hover:text-brand-accent dark:group-hover:text-brand-cyan transition-colors">
+                      <h3 className="text-lg sm:text-xl font-heading font-bold text-slate-900 dark:text-white group-hover:text-brand-accent dark:group-hover:text-brand-cyan transition-colors">
                         {project.title}
                       </h3>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1.5 line-clamp-2 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 line-clamp-2 leading-relaxed">
                       {project.tagline}
                     </p>
                   </div>
 
                   {/* Tech Tags */}
-                  <div className="flex flex-wrap gap-1.5 pt-2">
+                  <div className="flex flex-wrap gap-1 sm:gap-1.5 pt-1 sm:pt-2">
                     {project.tech.map((t) => (
                       <span
                         key={t}
-                        className="px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/50"
+                        className="px-2 py-0.5 rounded-md text-[10px] sm:text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-700/50"
                       >
                         {t}
                       </span>
@@ -170,7 +170,7 @@ export const ProjectsSection = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+                  <div className="flex items-center gap-2.5 sm:gap-3 pt-3 sm:pt-4 border-t border-slate-100 dark:border-slate-800">
                     {project.isComingSoon ? (
                       <Button
                         href={project.liveDemo}
@@ -196,9 +196,9 @@ export const ProjectsSection = () => {
                     )}
                     <button
                       onClick={() => setSelectedProject(project)}
-                      className="text-xs font-semibold text-slate-500 hover:text-brand-accent dark:hover:text-white px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                      className="text-xs font-semibold text-slate-500 hover:text-brand-accent dark:hover:text-white px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                     >
-                      View Details
+                      Details
                     </button>
                   </div>
                 </div>

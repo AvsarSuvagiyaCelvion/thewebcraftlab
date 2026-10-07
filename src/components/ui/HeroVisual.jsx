@@ -152,7 +152,7 @@ export const HeroVisual = () => {
         </div>
 
         {/* Dynamic Project Showcase Content */}
-        <div className="relative p-5 sm:p-6 bg-slate-50/50 dark:bg-slate-900/40">
+        <div className="relative p-3.5 sm:p-6 bg-slate-50/50 dark:bg-slate-900/40">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeProject.id}
@@ -160,10 +160,10 @@ export const HeroVisual = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.35, ease: "easeInOut" }}
-              className="space-y-4"
+              className="space-y-3 sm:space-y-4"
             >
               {/* Project Preview Image with Interactive Overlay */}
-              <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md group">
+              <div className="relative h-44 sm:h-64 w-full rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-md group">
                 <img
                   src={activeProject.image}
                   alt={activeProject.title}
@@ -172,22 +172,22 @@ export const HeroVisual = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
 
                 {/* Badge Overlay */}
-                <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/90 dark:bg-slate-900/90 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 shadow-md">
+                <div className="absolute top-2.5 left-2.5 right-2.5 sm:top-3 sm:left-3 sm:right-3 flex items-center justify-between">
+                  <span className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[11px] sm:text-xs font-bold bg-white/90 dark:bg-slate-900/90 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 shadow-md">
                     {activeProject.category}
                   </span>
-                  <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-brand-accent text-white shadow-md">
+                  <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold bg-brand-accent text-white shadow-md">
                     {activeProject.badge}
                   </span>
                 </div>
 
                 {/* Bottom Details on Image */}
-                <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-end justify-between">
                   <div>
-                    <h4 className="text-xl sm:text-2xl font-heading font-extrabold text-white tracking-tight">
+                    <h4 className="text-base sm:text-2xl font-heading font-extrabold text-white tracking-tight">
                       {activeProject.title}
                     </h4>
-                    <p className="text-xs text-slate-300 font-medium mt-0.5">
+                    <p className="text-[11px] sm:text-xs text-slate-300 font-medium mt-0.5">
                       Designed & Crafted by The WebCraft Lab
                     </p>
                   </div>
@@ -196,28 +196,28 @@ export const HeroVisual = () => {
                     href={activeProject.liveDemo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2.5 rounded-xl bg-brand-accent hover:bg-brand-accent/90 text-white shadow-lg hover:scale-110 active:scale-95 transition-all flex items-center justify-center min-h-[40px] min-w-[40px]"
+                    className="p-2 sm:p-2.5 rounded-xl bg-brand-accent hover:bg-brand-accent/90 text-white shadow-lg hover:scale-110 active:scale-95 transition-all flex items-center justify-center min-h-[36px] min-w-[36px] sm:min-h-[40px] sm:min-w-[40px]"
                     title="Visit live website"
                     aria-label={`Visit live website of ${activeProject.title}`}
                   >
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </a>
                 </div>
               </div>
 
               {/* Bottom Feature Bar */}
-              <div className="grid grid-cols-3 gap-2.5 pt-1">
-                <div className="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-center shadow-xs">
-                  <div className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500">Speed</div>
-                  <div className="text-xs sm:text-sm font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5">&lt; 1.0s Load</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-2.5 pt-0.5">
+                <div className="p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-center shadow-xs">
+                  <div className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500">Speed</div>
+                  <div className="text-[11px] sm:text-sm font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5">&lt; 1.0s</div>
                 </div>
-                <div className="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-center shadow-xs">
-                  <div className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500">Responsive</div>
-                  <div className="text-xs sm:text-sm font-extrabold text-brand-accent dark:text-brand-cyan mt-0.5">100% Mobile</div>
+                <div className="p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-center shadow-xs">
+                  <div className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500">Layout</div>
+                  <div className="text-[11px] sm:text-sm font-extrabold text-brand-accent dark:text-brand-cyan mt-0.5">100% Mobile</div>
                 </div>
-                <div className="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-center shadow-xs">
-                  <div className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500">SEO</div>
-                  <div className="text-xs sm:text-sm font-extrabold text-purple-600 dark:text-purple-400 mt-0.5">Google Ready</div>
+                <div className="p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 text-center shadow-xs">
+                  <div className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500">SEO</div>
+                  <div className="text-[11px] sm:text-sm font-extrabold text-purple-600 dark:text-purple-400 mt-0.5">Rank #1 Ready</div>
                 </div>
               </div>
 
