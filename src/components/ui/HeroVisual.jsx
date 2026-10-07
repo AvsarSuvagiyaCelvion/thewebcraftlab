@@ -30,14 +30,14 @@ export const HeroVisual = () => {
       accent: "from-orange-500 to-amber-500"
     },
     {
-      id: "rudra-gold",
-      title: "Rudra Gold Jewelry",
+      id: "luxury-perfume-store",
+      title: "Rimzim Perfumes",
       category: "Shopify E-Commerce",
       badge: "Shopify Store",
-      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1000&q=80",
-      liveDemo: "https://rudra-gold-3kqg5mzn.myshopify.com/",
-      metric: "Secure",
-      metricSub: "1-Click Checkout",
+      image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1000&q=80",
+      liveDemo: "https://therimzimperfume.com",
+      metric: "Luxury",
+      metricSub: "Conversion Funnel",
       accent: "from-amber-400 to-yellow-600"
     },
     {

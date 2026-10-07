@@ -39,24 +39,6 @@ export const projects = [
     }
   },
   {
-    id: "rudra-gold",
-    title: "Rudra Gold Luxury Jewelry",
-    category: "E-commerce",
-    secondaryCategory: "Shopify",
-    tagline: "Premium Shopify jewelry store with custom collections & secure checkout",
-    description: "A premium Shopify-based e-commerce jewelry store showcasing exquisite jewelry designs with collections, detailed descriptions, custom product pages, and a secure shopping experience.",
-    tech: ["Shopify", "Liquid", "HTML5", "CSS3", "JavaScript"],
-    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1000&q=80",
-    liveDemo: "https://rudra-gold-3kqg5mzn.myshopify.com/",
-    featured: true,
-    isComingSoon: false,
-    stats: {
-      platform: "Shopify Store",
-      type: "Luxury Jewelry",
-      checkout: "Secure Checkout"
-    }
-  },
-  {
     id: "luxury-perfume-store",
     title: "Luxury Perfume Store (The Rimzim Perfume)",
     category: "E-commerce",
