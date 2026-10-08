@@ -48,7 +48,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.18] sm:leading-[1.12]"
             >
-              We craft <span className="text-gradient">fast, modern websites</span> that bring you clients.
+              We craft <span className="text-gradient">fast, modern websites</span> that grow your business.
             </motion.h1>
 
             {/* Subtext */}
@@ -58,7 +58,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal"
             >
-              High-converting websites handcrafted with React & Tailwind CSS for small businesses, startups, and local brands. No slow templates. Just ultra-fast, client-generating digital craft.
+              High-converting websites handcrafted with React & Tailwind CSS for small businesses, startups, and local brands. No slow templates. Just ultra-fast, high-impact digital craft.
             </motion.p>
 
             {/* 2 Primary CTA Buttons */}

@@ -1,7 +1,7 @@
 export const siteConfig = {
   brandName: "The WebCraft Lab",
   shortName: "WebCraft",
-  tagline: "We craft fast, modern websites that bring you clients.",
+  tagline: "We craft fast, modern websites that grow your business.",
   subTagline: "Helping small businesses, startups, and local brands build high-impact digital experiences that drive real revenue.",
   
   // Strictly NO phone number as required

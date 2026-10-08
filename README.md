@@ -1,6 +1,6 @@
 # 🚀 The WebCraft Lab - Freelance Portfolio Website
 
-> **"We craft fast, modern websites that bring you clients."**  
+> **"We craft fast, modern websites that grow your business."**  
 > A modern, lightning-fast, and fully responsive freelance portfolio website engineered with **React 18**, **Vite**, and **Tailwind CSS**.
 
 ---
@@ -8,7 +8,7 @@
 ## 💎 Brand Identity & Contact
 
 - **Brand Name:** The WebCraft Lab
-- **Tagline:** We craft fast, modern websites that bring you clients.
+- **Tagline:** We craft fast, modern websites that grow your business.
 - **Location:** Surat, Gujarat, India
 - **Email:** [thewebcraftlab@gmail.com](mailto:thewebcraftlab@gmail.com)
 - **Instagram:** [@thewebcraftlab](https://instagram.com/thewebcraftlab) (`https://instagram.com/thewebcraftlab`)
